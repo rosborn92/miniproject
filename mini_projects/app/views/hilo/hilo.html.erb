@@ -1,0 +1,33 @@
+<center>
+<head>
+    <%= link_to "Main Page", '/' %>
+</head>
+<h1> High / Low Game </h1>
+
+<hr/>
+
+<h3>Guess a number between 1 and 25</h3>
+
+<h4>Follow the direction at the bottom of the page till you guess the secret number. Click Restart to start a new game.</h4>
+
+<br>
+
+<form action = "/hilo" method = "GET" >
+    <label for="guess">Guess a Number</label>
+    <input type="number" name="guess">
+    <input type="submit" name="counter">
+</form>
+
+<br>
+<%= "Turns remaining: #{cookies[:counter]}" %>
+<br>
+<br>
+
+<form action="/hilo/delete_cookies" method="get">
+    <input type="submit" name="delete_cookies" value="Restart Game">
+</form>
+
+<br>
+
+</center>
+<!-- <button type="button" action = "/hilo_controller.rb/delete_cookies" onClick= "delete_cookies" name="button">Restart Game</button> -->
